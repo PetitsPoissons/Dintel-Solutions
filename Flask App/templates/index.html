@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dintel Solutions</title>
+  <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-hVpXlpdRmJ+uXGwD5W6HZMnR9ENcKVRn855pPbuI/mwPIEKAuKgTKgGksVGmlAvt" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Dintel Dashboard</h1>
+        <h3>Forecasting overall volume of cases and units</h3>
+        <p><a href="/cluster">CLUSTERS</a> - <a href="/subscriber">SUBSCRIBERS</a> - <a href="https://petitspoissons.github.io/dintel_solutions/#forecast">BACK TO PRESENTATION</a></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div id="forecast"></div>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+        <form class="form-inline">
+            <div class="form-group">
+              <label for="forecasting-period">ENTER the number of months to forecast (1 to 12):</label>
+              <input class="form-control" id="user-input" name="forecasting-period" type="text" placeholder="none">
+            </div>
+            <button id="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+  </div>
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+
+</html>

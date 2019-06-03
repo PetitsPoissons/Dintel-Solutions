@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dintel Solutions</title>
+  <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-hVpXlpdRmJ+uXGwD5W6HZMnR9ENcKVRn855pPbuI/mwPIEKAuKgTKgGksVGmlAvt" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Dintel Dashboard</h1>
+        <p><a href="/subscriber">SUBSCRIBER</a> - <a href="/">FORECAST</a> - <a href="https://petitspoissons.github.io/dintel_solutions/#problem">BACK TO PRESENTATION</a></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div id="graphDiv"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+ 
+    <div class="row">
+                <div class="col-md-6">
+                    <img class="mx-auto d-block" src="https://petitspoissons.github.io/dintel_solutions/img/Kmeans_5.png" alt="Kmeans, 5 Clusters">
+        </div>
+    </div>
+    </div>
+    
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/cluster.js') }}"></script>
+
+</body>
+
+</html>

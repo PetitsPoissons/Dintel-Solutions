@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>USC Data Analytics - Final Project</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <!-- <span class="d-block d-lg-none">Start Bootstrap</span> -->
+            <span class="d-none d-lg-block">
+                <img class="img-fluid img-profile mx-auto mb-2" src="img/logo.png" alt="tooth">
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#problem">Business Context</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#clean">Preprocessing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#forecast">Forecasting</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#cluster">Clustering</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#dintel">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+
+        <!-- Title/Intro Section -->
+        <section class="resume-section p-3 p-lg-5 d-flex d-column" id="page-top">
+            <div class="my-auto">
+                <h1 class="pt-5">DINTEL SOLUTIONS</h1>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="">Machine learning applied to dental labs data</h3>
+                        <div class="subheading mb-4">with <span class="text-primary">Scikit-Learn</span> and <span class="text-primary">statsmodels</span></div>
+                    </div>
+                    <div class="col-md-4">
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5 class="mb-3">Presentation:</h5>
+                        <ol>
+                            <li>Business Context</li>
+                            <li>Data Acquisition & Preprocessing</li>
+                            <li>Forecasting with SARIMA</li>
+                            <li>Classification with K means clustering</li>
+                            <li>Putting it all together: Dintel App</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-fluid rounded" src="img/bizInt.jpg" alt="business intel image">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Business Context Section-->
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="problem">
+            <div class="my-auto">
+                <h2 class="mb-5">Business Context</h2>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="col-md-7">
+                        <div class="resume-content mr-auto">
+                            <p>Small LA-based company offering cloud-based software to dental labs, on a subscription basis</p>
+                            <p>Tremendous growth since the beginnings in 2011</p>
+                            <p><div class="subheading pt-2 mb-1">Current business needs:</div>
+                                <ul>
+                                    <li>Scaling of the system's architecture: bottlenecks and other traffic problems observed after 450 labs mark was reached (major software upgrade in the making)</li>
+                                    <li>Understanding subscribers profiles and adapting subscription choices</li>
+                                    <li>Possibly offering new business forecasting features</li>
+                                </ul>
+                            </p>
+                            <p><div class="subheading pt-2 mb-1">Project Goals:</div>
+                                <ul>
+                                    <li>Develop a predictive model to forecast growth in volume of cases/units</li>
+                                    <li>Develop a clustering model to group the current 471 subscribers, and identify generic profiles to help set subscription plans</li>
+                                    <li>Develop an app for visualization purposes</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="resume-content mr-auto">
+                            <img class="img-fluid" src="img/subscriber_plans.png" alt="subscriber plans">
+                        </div>
+                        <div class="resume-content mr-auto">
+                            <img class="img-fluid pt-5" src="img/growth.png" alt="business growth">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preprocessing Section-->
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="clean">
+            <div class="my-auto">
+                <h2 class="mb-5">Preprocessing the Data</h2>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-3">Data Acquisition & Cleaning:</h3>
+                        <p><strong>488 databases (one per subscriber)</strong> and a few administrative databases were made accessible on a MS SQL Server 2014 located in the AWS cloud. All 488 databases have the same database schema with 135 tables each. Each table can have anywhere from a dozen to a couple of hundreds fields.</p>
+                        <p>Python code was used to generate the scripts for the t-sql queries to extract data from 18 tables in each database and join them together:</p>
+                    </div>
+                </div>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="col-md-3">
+                        <p class="resume-content mr-auto">
+                            <img class="img-fluid rounded" src="img/toothbrush.gif" alt="full metal jacket toothbrush floor scrubbibg scene">
+                        </p>
+                        <p pt-3>Tables were merged, then cleaned (to remove duplicates, unnecessary columns, the company's testing data, and part of the null values), and differentiated by currency used.</p>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="resume-content mr-auto">
+                            <pre>
+                                <code>
+                                # Generate script for t-sql queries to add labName column to 'cases' tables
+                                for i in range(len(database_list)):
+                                    print(f"ALTER TABLE [{database_list[i]}].[dbo].cases")
+                                    print("ADD labName VARCHAR(255) NULL")
+                                    print("GO")
+                                    print(f"UPDATE [{database_list[i]}].[dbo].cases")
+                                    print(f"SET  labName = '{labname[i]}'")
+                                    print("GO")
+                                    print()
+                                </code>
+                                <code>
+                                # Generate script for t-sql queries to union 'cases' tables together
+                                for i in range(len(database_list)):
+                                    print(f"SELECT * FROM [{database_list[i]}].[dbo].cases")
+                                    print("UNION ALL")
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <div><strong>The cleaned dataset has over 10.6 million entries before aggregation.</strong> Additional cleaning of duplicates and null values, as well as hot encoding of categorical variables was done during aggregation operations, as needed.</div>
+
+                    </div>
+                </div>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-3">Data Transformation & Loading:</h3>
+                        <div>Various levels of aggregation were performed:
+                            <ul>
+                                <li>by <strong>case</strong> - dataset reduced to about 5.9 million entries</li>
+                                <li>by <strong>day</strong> - dataset reduced to 289,002 entries</li>
+                                <li>by <strong>month</strong> - dataset reduced to 95 entries</li>
+                                <li>by <strong>lab</strong> - dataset reduced to 478 entries</li>
+                            </ul>
+                        </div>
+                        <div>The resulting four dataframes were each saved into a <span class="text-primary"><strong>csv file</strong></span> for further use during the classification and forecasting steps.
+                            In addition, the daily dataset (289,002 entries) was transformed into a <span class="text-primary"><strong>sqlite file</strong></span> for use with the dashboard.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forecasting Section-->
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="forecast">
+            <div class="my-auto">
+                <h2 class="mb-5">Forecasting a Time-Series with SARIMA</h2>
+                <p>SARIMA = Seasonal-ARIMA (AutoRegressive Integrated Moving Average)</p>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-3">Step 1: Visualize the Data & Test for Stationarity</h3>
+                        <p>Is there an overall trend in the data? Does the data show any seasonal trends? This is important when deciding which type of model to use (ex: ARIMA vs SARIMA).</p>
+                        <p>Helpful tools from the <span class="text-primary">statsmodels</span> package:
+                            <ul>
+                                <li>the <strong>seasonal_decompose</strong> function (see charts below)</li>
+                                <li>the <strong>Augmented Dickey Fuller test</strong> (null hypothesis is that the time series is non-stationary, so if p-value below 0.05, reject the null hypothesis and infer that the time series is stationary)</li>
+                            </ul>
+                        </p>
+                        <p class="resume-content mr-auto">
+                            <img class="img-fluid rounded" src="img/seasonal_decompose.png" alt="seasonal-decompose charts">
+                        </p>
+                    </div>
+                </div>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-3">Step 2: Find the parameters to configure the SARIMA model</h3>
+                        <p>Using SARIMA requires to configure the model with hyperparameters that control the nature of the model performed for the series, trend and seasonality, specifically:
+                            <ul>
+                                <li><strong>order:</strong> a tuple p, d, and q parameters for the modeling of the trend.</li>
+                                <li><strong>sesonal_order:</strong> a tuple of P, D, Q, and m parameters for the modeling the seasonality</li>
+                                <li><strong>trend:</strong>A parameter for controlling a model of the deterministic trend as one of ‘n’,’c’,’t’,’ct’ for no trend, constant, linear, and constant with linear trend, respectively.</li>
+                            </ul>
+                        </p>
+                        <p>Absent domain knowledge, we can <span class="text-primary">grid search</span> those hyperparameters. This great website explains the methodology and provides helpful code:
+                            <a href="https://machinelearningmastery.com/how-to-grid-search-sarima-model-hyperparameters-for-time-series-forecasting-in-python/" target="_blank">"How to Grid Search SARIMA Hyperparameters for Time Series Forecasting"</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-3">Step 3: Build the model & Make predictions</h3>
+                        <p class="resume-content mr-auto">
+                            <img class="img-fluid rounded" src="img/sarima.png" alt="sarima model">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clustering Section-->
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="cluster">
+                <div class="my-auto">
+                    <h2 class="mb-5">Cluster Analysis</h2>
+                    <p>Clustering is used to divide our 471 current subscribers into a number of groups that share similarities. That can help understand the subscribers preferences and inform decisions made regarding the subscription plans offered.</p>
+                    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                        <div class="resume-content mr-auto">
+                            <h3 class="mb-3">K Means Clustering</h3>
+                            <p>K means is an unsupervised iterative clustering algorithm that aims to find local maxima in each iteration. It is unsupervised because the points have no external classification (contrary to KNN).</p>
+                            <p>First, the dataset was standardized (with StandardScaler()), as the K-means depend on calculating distances
+                            between the observations. Due to different scales of measurement of variables, some variables may have higher influence
+                            on the clustering output if we don't standardize first.</p>
+                            <p>Then the <span class="text-primary">elbow method</span>  was used to specify the desired number of clusters K.</p>
+                            <p class="resume-content mr-auto">
+                                <img class="img-fluid rounded" src="img/elbow_method.png" alt="elbow method">
+                            </p>
+                        </div>
+                    </div> 
+                    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                            <div class="resume-content mr-auto">
+                                <h3 class="mb-3">Hierarchical Clustering</h3>
+                                <p>This method could also be used here as we only have 471 data points after aggregation. Hierarchical Clustering also requires that the dataset be standardized first.
+                                <p class="resume-content mr-auto">
+                                    <img class="img-fluid rounded" src="img/dendogram.png" alt="dendogram">
+                                </p>
+                            </div>
+                        </div>           
+    
+                </div>
+    
+        </section>
+
+
+
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="js/app.js"></script>
+    
+
+</body>
+
+</html>
